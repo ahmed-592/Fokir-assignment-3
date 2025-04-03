@@ -118,7 +118,9 @@ div.about div.image-about {
   position: relative;
   float: left;
   width: 30%;
-  transform: translate(120px);
+  transform: translateX(140px);
+
+  overflow: hidden;
 }
 
 div.about div.about-caption {
@@ -127,16 +129,16 @@ div.about div.about-caption {
   text-align: start;
   margin-left: 80px;
   line-height: 30px;
-  transform: translateY(-50px);
+  transform: translateY(-20px);
 }
 
 div.about div.image-about::before {
   content: "";
   position: absolute;
-  top: -5%;
+  top: 0;
   left: 0;
 
-  width: 350px;
+  width: 320px;
   height: 420px;
 
   border: solid 8px rgba(0, 0, 0, 0.7);
@@ -154,13 +156,16 @@ div.image-about .about-layer {
 
   margin-left: 8%;
 
-  background-color: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-
-  transition: opacity 1s;
-}
-div.image-about .about-layer:hover {
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
+  transform: translateY(500px);
+
+  transition: transform 1s;
+}
+div.image-about:hover .about-layer {
+  opacity: 1;
+  transform: translateY(30px);
+  transition: transform 1s;
 }
 
 div.image-about .about-layer ul {
@@ -194,8 +199,8 @@ a:hover .fa-github {
 }
 
 div.about div.image-about img {
+  padding-top: 8%;
   padding-left: 8%;
-  border-radius: 2%;
   width: 100%;
 }
 
@@ -377,6 +382,10 @@ div.about div.about-caption div a:hover {
 #vip-button {
   color: #ff2831;
 }
+.container .links button a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+}
 .container .item img {
   width: 100%;
 }
@@ -384,9 +393,9 @@ div.about div.about-caption div a:hover {
 .container .item a::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 12.5%;
   left: 0;
-  bottom: 0;
+  bottom: 1%;
   right: 0;
   opacity: 0;
   transition: opacity 1s;
